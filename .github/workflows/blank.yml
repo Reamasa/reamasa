@@ -6,13 +6,13 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 9999
+    timeout-minutes: 360
 
     steps:
     - name: Downloading Ngrok.
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/romain09/REVERSE-RDP/main/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/romain09/REVERSE-RDP/main/start.bat -OutFile start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/romain09/REVERSE-RDP/main/start.bat -OutFile start.bat
     - name: Extracting Ngrok Files.
       run: Expand-Archive ngrok.zip
     - name: Connecting to your Ngrok account.
